@@ -1,0 +1,79 @@
+<html lang="en">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        <div class="w-40 text-black bg-amber-200 rounded-lg px-5 py-3 mb-5 text-center">
+            <a href="/">Go Back Home</a>
+        </div>
+        <h1 class="text-3xl tracking-tighter mb-5">All Users</h1>
+        <div class="users flex gap-5 flex-wrap">
+
+            <% if(users.length>0){
+                %>
+                <% users.forEach((val)=>{ %>
+                    <div class="user w-72 p-4 bg-zinc-700 rounded-lg">
+                        <div class="w-full h-52 rounded-lg bg-amber-200 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="<%=val.imageUrl%>" alt="">
+                        </div>
+                        <h3 class="tracking-tighter mt-3">
+                            <%=val.name%>
+                        </h3>
+                        <h5 class="tracking-tighter text-zinc-400">
+                            <%=val.email%>
+                        </h5>
+                        <div class="flex justify-between gap-5 mt-3">
+                            <a class="w-full bg-blue-500 rounded-md px-2 py-1 text-center"
+                                href="/edit/<%=val._id%>">Edit
+                                User</a>
+                            <a class="w-full bg-red-500 rounded-md px-2 py-1 text-center"
+                                href="/delete/<%=val._id%>">Delete
+                                User</a>
+                        </div>
+                    </div>
+                    <% }) %>
+
+
+                        <% }else{ %>
+                            <h3 class="text-zinc-600 tracking-tighter mb-5">No User Found.</h3>
+
+                            <% } %>
+
+
+
+
+
+                                <!-- <div class="user w-72 p-4 bg-zinc-700 rounded-lg">
+                        <div class="w-full h-52 rounded-lg bg-amber-200"></div>
+                        <h3 class="tracking-tighter mt-3">Muhammad Athar</h3>
+                        <h5 class="tracking-tighter text-zinc-400">athar@gmail.com</h5>
+                        <div class="flex justify-between gap-5 mt-3">
+                            <a class="w-full bg-blue-500 rounded-md px-2 py-1 text-center" href="">Edit User</a>
+                            <a class="w-full bg-red-500 rounded-md px-2 py-1 text-center" href="">Delete User</a>
+                        </div>
+                    </div>
+                    <div class="user w-72 p-4 bg-zinc-700 rounded-lg">
+                        <div class="w-full h-52 rounded-lg bg-amber-200"></div>
+                        <h3 class="tracking-tighter mt-3">Muhammad Athar</h3>
+                        <h5 class="tracking-tighter text-zinc-400">athar@gmail.com</h5>
+                        <div class="flex justify-between gap-5 mt-3">
+                            <a class="w-full bg-blue-500 rounded-md px-2 py-1 text-center" href="">Edit User</a>
+                            <a class="w-full bg-red-500 rounded-md px-2 py-1 text-center" href="">Delete User</a>
+                        </div>
+                    </div> -->
+        </div>
+
+    </div>
+</body>
+
+</html>
